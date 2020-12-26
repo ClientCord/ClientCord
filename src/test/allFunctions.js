@@ -1,5 +1,5 @@
 const clientcord = require(__dirname + "/../../index.js");
-const client = new clientcord.client("--- BOT TOKEN ---");
+const client = new clientcord.client(process.env.BOT_TOKEN);
 
 
 
