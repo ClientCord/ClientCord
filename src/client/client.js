@@ -135,13 +135,16 @@ class client extends EventEmitter {
     if (text.startsWith("listening ")) {
       statustype = 2;
     }
+        if (text.startsWith("watching ")) {
+      statustype = 3;
+    }
     //console.log(finalType);
     let precense = {
       op: 3,
       d: {
         since: 91879201,
         activities: [{
-         name: text.replace("listening ", "").replace("playing ", ""),
+         name: text.replace("listening ", "").replace("playing ", "").replace("watching ", ""),
          type: statustype
        }],
         status: `${finalType}`,

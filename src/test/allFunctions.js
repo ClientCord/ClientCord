@@ -6,7 +6,7 @@ const client = new clientcord.client(process.env.BOT_TOKEN);
 
 
 client.on("ready", () => {
-  client.status(client.user.username, "dnd");
+  client.status("watching Hyper Bot List", "dnd");
 });
 
 
