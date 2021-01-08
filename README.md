@@ -68,7 +68,7 @@ Will react with an emoji to a message (No custom emoji's supported yet)
 client.status("[playing/listening] [text]")
 ````
 ````js
-client.status("[playing/listening] [text]", "[dnd/invisible/online/idle]")
+client.status("[playing/listening/watching] [text]", "[dnd/invisible/online/idle]")
 ````
 
 **Client.status()**
