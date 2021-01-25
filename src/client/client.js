@@ -11,7 +11,7 @@
 let options = {
   gateway: `wss://gateway.discord.gg/?v=6&encoding=json`,
   api: `https://discord.com/api/v6`,
-  log: false
+  log: true
 }
 let opcode = {
 
