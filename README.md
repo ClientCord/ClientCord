@@ -1,9 +1,9 @@
 
-**
+
 ```
 ClientCord.js
 ```
-**
+
 
 
 Welcome to ClientCord.JS a small project for improving our coding skills. This is a wrapper for the discord API in NodeJS with comfort features.
