@@ -1,5 +1,9 @@
 
-![ClientCord Logo](https://cdn.discordapp.com/attachments/794917489493671946/797807520386646037/unknown.png)
+**
+```
+ClientCord.js
+```
+**
 
 
 Welcome to ClientCord.JS a small project for improving our coding skills. This is a wrapper for the discord API in NodeJS with comfort features.
