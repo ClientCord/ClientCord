@@ -14,6 +14,8 @@
 //Exports for clientcord.js
 let embed = require(__dirname + "/src/extra/embed.js").embed; //Get embed helper class.
 let client = require(__dirname + "/src/client/client.js").client; //Get client class.
+let slash = require(__dirname + "/src/extra/slashBuilder.js").slashCommand; //Get client class.
 module.exports.client = client; //Export client
 module.exports.embed = embed; //Export embed helper.
+module.exports.slashCommand = slash; //Export interaction helper.
 //=======================================

@@ -1,6 +1,5 @@
 
-![ClientCord Logo](https://cdn.discordapp.com/attachments/794917489493671946/797807520386646037/unknown.png)
-
+**clientcord**
 
 Welcome to ClientCord.JS a small project for improving our coding skills. This is a wrapper for the discord API in NodeJS with comfort features.
 ## Todo
@@ -19,6 +18,7 @@ Welcome to ClientCord.JS a small project for improving our coding skills. This i
  - [x] Delete message
  - [x] React to message
  - [x] Set status
+ - [ ] Webhooks
  - [ ] Use .then() or await on syntax like message.send() instead of client.latestMessage;
  
  ## Syntax

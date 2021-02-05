@@ -1,33 +1,50 @@
 const clientcord = require(__dirname + "/../../index.js");
 const client = new clientcord.client(process.env.BOT_TOKEN);
-
-
-
-
-
 client.on("ready", () => {
-  client.status("watching Hyper Bot List", "dnd");
+  client.status("watching people Type npm i clientcord.js");
+  console.log("Ready!");
+  client.plugin(__dirname + "/../../testplugin", {})
 });
 
 
-
+client.on('channelCreate', (e) => {
+  console.log(e)
+})
 
 
 client.command({
   name: "!ping",
   description: "Ping pong",
-  reply: `Pong!`
+  reply: "Pong!"
 });
 
 
+/*client.command({
+  name:"!slash",
+  description:"testing slash commands",
+  run: (message, args) => {
+    let slash = new clientcord.slashCommand();
+    slash.setName("Test");
+    slash.setDescription("Works IG");
+    client.createGuildInteraction(slash, "798862503484194856")
+  }
+})*/
 
+
+client.command({
+  name: "!plugin",
+  description: "Test plugins",
+  run: (message, args) => {
+    client.testplugin.test2(client);
+  }
+});
 
 
 client.command({
   name: "!guilds",
   description: "Get Guilds",
   run: (message, args) => {
-    message.reply(client.guilds.cache.map(g => g.name).join("\n"))
+    message.reply(client.guilds.map(g => g.name).join("\n"))
   }
 });
 
@@ -41,18 +58,6 @@ client.command({
   run: (message, args) => {
     //console.log(client.members.map(u => u.username).join("\n"));
     message.reply(client.members.map(u => u.username).join("\n"))
-  }
-});
-
-
-
-
-
-client.command({
-  name: "!getGuild",
-  description: "Get Guild",
-  run: (message, args) => {
-    console.log(client.guilds.get("755457188914528317"));
   }
 });
 
@@ -175,4 +180,3 @@ client.command({
     
   }
 })
-
