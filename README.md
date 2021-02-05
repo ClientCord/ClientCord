@@ -306,7 +306,7 @@ const client = new clientcord.client("--- Bot Token ---");
   
   
 client.on("ready", () => {
-	client.status(client.user.username, "dnd");
+	client.status("watching you", "dnd");
 });
   
   
