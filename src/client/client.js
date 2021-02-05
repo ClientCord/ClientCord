@@ -9,8 +9,8 @@
                                                 |__/       
 */
 let options = {
-  gateway: `wss://gateway.discord.gg/?v=6&encoding=json`,
-  api: `https://discord.com/api/v6`,
+  gateway: `wss://gateway.discord.gg/?v=8&encoding=json`,
+  api: `https://discord.com/api/v8`,
   log: true
 }
 let opcode = {
@@ -60,7 +60,10 @@ class client extends EventEmitter {
     this.events = new EventEmitter();
     let indetification = {
       op: 2,
-      d: { token, properties }
+      d: { token: this.token,
+           intents: 2047,
+           properties: properties
+        }
     }
     this.conn = new socket(options.gateway);
     this.conn.onopen = () => {
@@ -122,6 +125,24 @@ class client extends EventEmitter {
   }
   react(channelid, messageid, emoji){
     require(__dirname + "/../actions/reactions/add.js").run(channelid, messageid, emoji, this, options)
+  }
+  plugin(file, opt) {
+    let reader = require(__dirname + "/../extra/clcp");
+    if (options.log === true) console.log("Attempting to load '" + file + "'");
+    if (fs.existsSync(file)) {
+      let pl = new reader(file + "/plugin.clcp");
+      let plData = pl.js();
+      let plFile = require(file + "/" + plData.file);
+      this[plData.friendlyname] = {};
+      let plClass = new plFile.main(this);
+      plFile.exp.forEach((func, i) => {
+        this[plData.friendlyname][func] = plClass[func]
+      })
+      if (options.log === true) console.log("Loaded: " + plData.name + "^" + plData.version);
+    }
+  }
+  createGuildInteraction(cmd, guildID){
+    require(__dirname + "/../actions/interactions/createGuildInteraction.js").run(cmd.cmd(), guildID, this, options)
   }
   status(text, type) {
     let finalType = "online";

@@ -1,11 +1,5 @@
 
 
-```
-ClientCord.js
-```
-
-
-
 Welcome to ClientCord.JS a small project for improving our coding skills. This is a wrapper for the discord API in NodeJS with comfort features.
 ## Todo
  - [ ] Messages
@@ -23,6 +17,7 @@ Welcome to ClientCord.JS a small project for improving our coding skills. This i
  - [x] Delete message
  - [x] React to message
  - [x] Set status
+ - [ ] Webhooks
  - [ ] Use .then() or await on syntax like message.send() instead of client.latestMessage;
  
  ## Syntax
@@ -310,7 +305,7 @@ const client = new clientcord.client("--- Bot Token ---");
   
   
 client.on("ready", () => {
-	client.status(client.user.username, "dnd");
+	client.status("watching you", "dnd");
 });
   
   

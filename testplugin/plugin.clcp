@@ -1,0 +1,29 @@
+#===========================================================
+#  _____ _ _            _    _____              _   _      |
+# / ____| (_)          | |  / ____|            | | (_)     |
+#| |    | |_  ___ _ __ | |_| |     ___  _ __ __| |  _ ___  |
+#| |    | | |/ _ \ '_ \| __| |    / _ \| '__/ _` | | / __| |
+#| |____| | |  __/ | | | |_| |___| (_) | | | (_| |_| \__ \ |
+# \_____|_|_|\___|_| |_|\__|\_____\___/|_|  \__,_(_) |___/ |
+#                                                 _/ |     |
+#                                                |__/      |
+#===========================================================
+#Clcp, CLientCordPlugin. Plugin designed for use with @clientcord/clientcord.js
+
+=NAME
+"Test Plugin"
+
+=FILE
+"index.js"
+
+=VERSION
+1.0.0
+
+=FRIENDLYNAME
+"testplugin"
+
+=DESCRIPTION
+"Just some testing plugin"
+
+=GITHUB
+"https://github.com/ClientCord/ClientCord.js/" #WORKS!!

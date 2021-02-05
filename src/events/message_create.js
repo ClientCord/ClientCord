@@ -32,5 +32,6 @@ async function run(client, packet) {
       }
     }
     client.emit(`message`, finalPacket);
+    client.emit(`messageCreate`, packet);
 }
 module.exports.run = run;
